@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class WifiToggle extends AppCompatActivity {
@@ -46,6 +47,7 @@ public class WifiToggle extends AppCompatActivity {
                 if (isChecked) {
                     wifiManager.setWifiEnabled(true);
                     wifiStatusTextView.setText("Wifi is currently ON");
+                    Toast.makeText(WifiToggle.this, "Wifi may take a moment to turn on", Toast.LENGTH_LONG).show();
                 } else {
                     wifiManager.setWifiEnabled(false);
                     wifiStatusTextView.setText("Wifi is currently OFF");
